@@ -1,7 +1,6 @@
 package userGetHandler
 
 import (
-	"fmt"
 	"net/http"
 
 	getUser "github.com/fikrifirmanf/go-rest-api-wedding/controllers/user-controllers/get"
@@ -19,7 +18,6 @@ func NewHandlerGetUsers(service getUser.Service) *handler {
 
 func (h *handler) GetUsersHandler(ctx *gin.Context) {
 	result, errorResult := h.service.GetServiceUsers()
-	fmt.Println(result, errorResult)
 	switch errorResult {
 	case "USERS_NOT_FOUND":
 		util.CustomAPIResponse(ctx, http.StatusNotFound, http.MethodGet, "Users not exist", nil)

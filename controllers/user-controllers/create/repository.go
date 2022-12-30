@@ -1,8 +1,6 @@
 package createUser
 
 import (
-	"fmt"
-
 	model "github.com/fikrifirmanf/go-rest-api-wedding/models"
 	util "github.com/fikrifirmanf/go-rest-api-wedding/utils"
 	"gorm.io/gorm"
@@ -35,7 +33,6 @@ func (r *repository) CreateRepositoryUser(input *model.Users) (*model.Users, str
 	errs := util.TranslateError(user)
 	if errs != nil {
 		errorCode <- "VALIDATION_ERROR"
-		fmt.Println(errs)
 		return &users, <-errorCode, errs
 	}
 	checkDuplicateAccount := r.db.Where("email = ? OR username = ? ", input.Email, input.Username).First(&users)

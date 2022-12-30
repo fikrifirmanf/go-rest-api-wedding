@@ -1,8 +1,6 @@
 package util
 
 import (
-	"fmt"
-
 	"github.com/go-playground/locales/en"
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
@@ -20,7 +18,6 @@ func TranslateError(s interface{}) (errs []string) {
 		return nil
 	}
 	validatorErrors := err.(validator.ValidationErrors)
-	fmt.Println(validatorErrors)
 	for _, e := range validatorErrors {
 		translatedErrors := e.Translate(trans)
 		errs = append(errs, translatedErrors)
