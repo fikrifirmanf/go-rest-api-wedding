@@ -12,7 +12,7 @@ type Responses struct {
 type ErrorResponses struct {
 	StatusCode int         `json:"status_code"`
 	Method     string      `json:"method"`
-	Error      string      `json:"error"`
+	Error      string      `json:"code"`
 	Message    interface{} `json:"message"`
 }
 
@@ -32,12 +32,12 @@ func CustomAPIResponse(ctx *gin.Context, statusCode int, method string, message 
 	}
 }
 
-func CustomAPIErrorResponse(ctx *gin.Context, statusCode int, method string, errorCode string, Message []string) {
+func CustomAPIErrorResponse(ctx *gin.Context, statusCode int, method string, errorCode string, message []string) {
 	jsonResponse := ErrorResponses{
 		StatusCode: statusCode,
 		Method:     method,
 		Error:      errorCode,
-		Message:    Message,
+		Message:    message,
 	}
 
 	ctx.JSON(statusCode, jsonResponse)

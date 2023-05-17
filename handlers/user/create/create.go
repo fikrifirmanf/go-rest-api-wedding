@@ -3,7 +3,7 @@ package userCreateHandler
 import (
 	"net/http"
 
-	createUser "github.com/fikrifirmanf/go-rest-api-wedding/controllers/user-controllers/create"
+	createUser "github.com/fikrifirmanf/go-rest-api-wedding/controllers/user/create"
 	util "github.com/fikrifirmanf/go-rest-api-wedding/utils"
 	"github.com/gin-gonic/gin"
 )

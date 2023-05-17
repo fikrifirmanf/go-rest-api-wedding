@@ -3,7 +3,7 @@ package userGetHandler
 import (
 	"net/http"
 
-	getUser "github.com/fikrifirmanf/go-rest-api-wedding/controllers/user-controllers/get"
+	getUser "github.com/fikrifirmanf/go-rest-api-wedding/controllers/user/get"
 	util "github.com/fikrifirmanf/go-rest-api-wedding/utils"
 	"github.com/gin-gonic/gin"
 )
